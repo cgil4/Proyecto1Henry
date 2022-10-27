@@ -6,57 +6,41 @@
 Este proyecto se realiza como culminación al curso de Data Science, especificamente en el tema de Ingeneria de Datos, la idea es tomar archivos de diferentes fuentes para porde aplicar el proceso completo de ETL ( Extraccion, Transformacion y carga de datos) utilizando todas las herramientas posibles, que en este caso fueron SQL, Python y sus librerias como Pandas, Numpy, SQLAlchemy entre otras
 
 
-## Propuesta
-- Procesar los diferentes datasets. 
-- Crear un archivo DB con el motor de SQL que quieran. Pueden usar SQLAlchemy por ejemplo.
-- Realizar en draw.io un diagrama de flujo de trabajo del ETL y explicarlo en vivo.
-- Realizar una carga incremental de los archivos que se tienen durante el video.
-- Realizar una query en el video, para comprobar el funcionamiento de todo su trabajo. La query a armar es la siguiente: Precio promedio de la sucursal 9-1-688.
+## Peticiones para completar el proyecto
+*Procesar los diferentes datasets.
 
-## Procesos
+*Crear un archivo DB con el motor de SQL que se desee. 
 
-### Generar la Base de Datos: Se usaran todos los datos propuestos a excepcion del propuesto para la carga incremental.
+*Realizar en draw.io un diagrama de flujo de trabajo del ETL y explicarlo en vivo.
 
-*    En este proceso se tomaran los archivos de Producto y Sucursal y se añadiran a un archivo .db generado 
-    (Si la carpeta de Salida contiene un archivo .db lo borrara y generara uno nuevo), luego de generadas las tablas procesara todos los archivos de precio, detectando automaticamente la fecha y dejando en la tabla final de precio el ultimo precio conocido para la sucursal y el producto, junto con la fecha de la que se tomo.
+*Realizar una carga incremental de los archivos que se tienen durante el video.
 
-#### Diagrama de Flujo
+*Realizar una query en el video, para comprobar el funcionamiento de todo su trabajo. La query a armar es la siguiente: Precio promedio de la sucursal 9-1-688.
+
+## Procedimiento
+
+### Proceso de ETL
+
+*    Se toman todos los archivos enviados para la realizacion de la tarea, en los diferentes formatos, XLSX, Parquet, TXT, CVS y JSON, estos se transformaran e un unico formato para poder almacenarlos despues de su respectiva depuración en una Base de datos con su respectivas tablas
+
+#### Diagramas de Flujo
 <img src="_src\assets\Base_de_datos.png"  height="500">
 
-#### Grafico del Proceso en Airflow
-<img src="_src\assets\Airflow_Generar_DB.png"  height="250">
 
-<br/>
-<br/>
-<br/>
+#### Procesos realizado
 
-## Carga Incremental del Archivo Excel.
+Se analizo en que instancia del ETL se iba a realizar la limpieza y joins de los datasets.
+Se comento el código en todo momento.
+Se realizaron las operaciones para depurar la data y dejarla en la base de datos
+Se realizaron los script, uno para el promedio de sucursal y otro para carga incremental
+Se realizo Diagrama de flujos
+Se realizo el video
+Se subio el proyecto a Github
+Se explica el proyecto en vivo
 
-*    En este proceso se tomaran archivos de precios y se procesaran de la misma manera que en el proceso anterior, pero en este caso se hara lectura a un
-    archivo .db y se lo escribira, los precios inexistentes seran agregados, mientras que los precios existentes seran sometidos a una comparacion donde la tabla final solo contendra el precio con la fecha mas reciente
+<img src="_src\assets\Base_de_datos.png"  height="500">
 
-### Diagrama de Flujo
-<img src="_src\assets\Carga_Incremental.png"  height="500">
+<img src="_src\assets\Base_de_datos.png"  height="500">
 
-### Grafico del Proceso en Airflow
-<img src="_src\assets\Airflow_Carga_Incremental.png"  height="250">
 
-<br/>
-<br/>
-<br/>
 
-## MANUAL DE USUARIO
-##### (SOLO LA IMPLEMENTACION DE AIRFLOW ESTA DESTINADA A LA PRODUCCION, EL SCRIPT DE PYTHON SOLO CONTEMPLA EL PROCESO DE GENERAR LA BASE DE DATOS)
-<br/>
-
-### Usuario y Contraseña en AirFlow: henry
-- #### (Los Dags pueden fallar, correrlos de vuelta si falla una tarea)
-- ## Generar Base de Datos
-        Para generar la base de Datos se debe seguir la estructura propuesta en las carpetas, con una sucursal en csv y un producto en parquet.
-        Para los precios se debe usar un csv, txt o json, que contengan la fecha al FINAL DEL NOMBRE con formato YYYYMMDD.
-        En caso de un excel tambien deben contener la fecha en el mismo formato al final del nombre, pero no del archivo, si no de cada hoja que contenga el Excel
-
-- ## Carga Incremental de Archivos
-       Se deben seguir las mismas normas expuestas arriba para la carga de archivos de Precios.
-       Poner en la Carpeta DB el archivo con nombre 'DataBase.db', el cual sera sobreescrito al finalizar el proceso.
-       En Caso de fallo de una tarea siempre se debe disponer de un Backup del archivo .db, restaurar el backup cada vez que se corra el proceso.
