@@ -46,7 +46,7 @@ Se explica el proyecto en vivo
 
 <img src="SRC\datos.png"  height="250">
 
-<img src="SRC\henry2.png"  height="250">
+<img src="SRC\Henry2.png"  height="250">
 
 
 
