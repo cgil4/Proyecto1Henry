@@ -1,7 +1,7 @@
 # Proyecto Individual 01 - Data Engineering - Henry
-<img src="SRC\etl.png"  height="250">
+<img src="SRC\Henry.png"  height="250">
 
-<img src="SRC/etl.png"  height="250">
+
 ## Introduccion
 
 Este proyecto se realiza como culminación al curso de Data Science, especificamente en el tema de Ingeneria de Datos, la idea es tomar archivos de diferentes fuentes para porde aplicar el proceso completo de ETL ( Extraccion, Transformacion y carga de datos) utilizando todas las herramientas posibles, que en este caso fueron SQL, Python y sus librerias como Pandas, Numpy, SQLAlchemy entre otras
@@ -20,12 +20,17 @@ Este proyecto se realiza como culminación al curso de Data Science, especificam
 
 ## Procedimiento
 
+<img src="SRC\introduccion.png"  height="250">
+
 ### Proceso de ETL
 
 *    Se toman todos los archivos enviados para la realizacion de la tarea, en los diferentes formatos, XLSX, Parquet, TXT, CVS y JSON, estos se transformaran e un unico formato para poder almacenarlos despues de su respectiva depuración en una Base de datos con su respectivas tablas
 
+<img src="SRC\etl.png"  height="250">
+
 #### Diagramas de Flujo
-<img src="_src\assets\Base_de_datos.png"  height="500">
+
+<img src="SRC\Diagrama de flujo.png"  height="250">
 
 
 #### Procesos realizado
@@ -39,9 +44,9 @@ Se realizo el video
 Se subio el proyecto a Github
 Se explica el proyecto en vivo
 
-<img src="_src\assets\Base_de_datos.png"  height="500">
+<img src="SRC\datos.png"  height="250">
 
-<img src="_src\assets\Base_de_datos.png"  height="500">
+<img src="SRC\henry2.png"  height="250">
 
 
 
