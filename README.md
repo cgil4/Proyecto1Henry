@@ -1,5 +1,5 @@
 # Proyecto Individual 01 - Data Engineering - Henry
-<img src="src\ETL.JPG"  height="250">
+<img src="SRC\ETL.JPG"  height="250">
 
 ## Introduccion
 
